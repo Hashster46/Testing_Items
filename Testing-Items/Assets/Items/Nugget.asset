@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d8ed3f056cd6ee4f9530402dc9441f8, type: 3}
-  m_Name: Wood
+  m_Name: Nugget
   m_EditorClassIdentifier: 
-  name: Wood
-  icon: {fileID: -3723118755774083741, guid: 6ca53ee470c0afe4fb1aa3ce1d1be997, type: 3}
-  description: A log of wood typically used to start fires. Wood can be used to make
-    charcoal which burns longer and more efficiently. Wood logs can also be chopped
-    down into planks that can be used to construct wooden objects.
+  name: Nugget
+  icon: {fileID: -7178083511279410380, guid: 6ca53ee470c0afe4fb1aa3ce1d1be997, type: 3}
+  description: This is the nugget of a generic metal that has been extracted from
+    its ore. Used for testing purposes.
