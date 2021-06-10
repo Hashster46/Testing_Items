@@ -15,17 +15,7 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    public List<Item> itemList = new List<Item>();
     public GameObject inventoryDisplay;
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            // Add a random item from this list to inventory
-            Inventory.instance.AddItem(itemList[Random.Range(0, itemList.Count)], 1);
-        }
-    }
 
     public void OnItemSlotClicked(ItemSlot itemslot)
     {
