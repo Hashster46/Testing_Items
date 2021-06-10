@@ -24,10 +24,22 @@ public class Inventory : MonoBehaviour
     public Action onItemChange = delegate { };
 
     public List<Item> inventoryItemList = new List<Item>();
+    public List<int> inventoryItemAmountList = new List<int>();
 
-    public void AddItem(Item item)
+    public void AddItem(Item item, int amount)
     {
-        inventoryItemList.Add(item);
+        if (!inventoryItemList.Contains(item))
+        {
+            inventoryItemList.Add(item);
+            inventoryItemAmountList.Add(amount);
+        }
+        else
+        {
+            int originalAmount = inventoryItemAmountList[inventoryItemList.IndexOf(item)];
+            int newAmount = originalAmount + amount;
+            inventoryItemAmountList[inventoryItemList.IndexOf(item)] = newAmount;
+        }
+
         onItemChange.Invoke();
     }
 }

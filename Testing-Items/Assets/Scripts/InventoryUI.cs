@@ -16,7 +16,7 @@ public class InventoryUI : MonoBehaviour
     public Transform inventoryItemTransform;
     private List<ItemSlot> itemSlotList = new List<ItemSlot>();
     
-
+    
     private void Start()
     {
         Inventory.instance.onItemChange += UpdateInventoryUI;
@@ -37,6 +37,7 @@ public class InventoryUI : MonoBehaviour
             {
                 //Open inventory
                 OpenInventory();
+                
             }
         }
     }
@@ -56,7 +57,7 @@ public class InventoryUI : MonoBehaviour
             if(i <= currentItemCount)
             {
                 // Update the current item in the slot based on the item at the same index in the inventory
-                itemSlotList[i].AddItem(Inventory.instance.inventoryItemList[i]);
+                itemSlotList[i].AddItem(Inventory.instance.inventoryItemList[i], Inventory.instance.inventoryItemAmountList[i]);
             }
             else
             {

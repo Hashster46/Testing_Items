@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             // Add a random item from this list to inventory
-            Inventory.instance.AddItem(itemList[Random.Range(0, itemList.Count)]);
+            Inventory.instance.AddItem(itemList[Random.Range(0, itemList.Count)], 1);
         }
     }
 
