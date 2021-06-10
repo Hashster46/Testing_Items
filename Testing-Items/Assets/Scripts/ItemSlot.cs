@@ -8,6 +8,7 @@ public class ItemSlot : MonoBehaviour
     public Image icon;
     public int itemAmount;
     private Transform amountText;
+    [SerializeField]
     private Item item;
     public Item Item => item;
 

@@ -13,12 +13,15 @@ public class InventoryUI : MonoBehaviour
     public GameObject craftingTab;
 
     public GameObject itemSlotPrefab;
+    public GameObject librarySlotPrefab;
     public Transform inventoryItemTransform;
+    public Transform libraryItemTransform;
     private List<ItemSlot> itemSlotList = new List<ItemSlot>();
     
     
     private void Start()
     {
+        PopulateItemLibrary();
         Inventory.instance.onItemChange += UpdateInventoryUI;
         UpdateInventoryUI(); // To initialize at the beginning
     }
@@ -78,6 +81,17 @@ public class InventoryUI : MonoBehaviour
             itemSlotList.Add(newSlot);
         }
     }
+
+    private void PopulateItemLibrary()
+    {
+        foreach(Item repositoryItem in ItemRepository.instance.gameItems)
+        {
+            Debug.Log(repositoryItem.name);
+            GameObject GO = Instantiate(librarySlotPrefab, libraryItemTransform);
+            GO.GetComponent<LibrarySlot>().AddItem(repositoryItem);
+        }
+    }
+
     private void OpenInventory()
     {
         inventoryOpen = true;
