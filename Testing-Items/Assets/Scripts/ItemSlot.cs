@@ -7,6 +7,7 @@ public class ItemSlot : MonoBehaviour
 {
     public Image icon;
     private Item item;
+    public Item Item => item;
 
     public void AddItem(Item newItem)
     {
@@ -19,6 +20,7 @@ public class ItemSlot : MonoBehaviour
         if(item != null)
         {
             item.Use();
+            GameManager.instance.OnItemSlotClicked(this);
         }
     }
 

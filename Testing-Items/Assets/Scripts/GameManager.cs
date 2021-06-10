@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public List<Item> itemList = new List<Item>();
+    public GameObject inventoryDisplay;
 
     private void Update()
     {
@@ -24,5 +25,10 @@ public class GameManager : MonoBehaviour
             // Add a random item from this list to inventory
             Inventory.instance.AddItem(itemList[Random.Range(0, itemList.Count)]);
         }
+    }
+
+    public void OnItemSlotClicked(ItemSlot itemslot)
+    {
+        inventoryDisplay.GetComponent<InventoryUI_DispPanel>().DispPanelUpdate(itemslot);
     }
 }

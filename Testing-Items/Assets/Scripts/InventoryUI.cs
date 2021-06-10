@@ -15,6 +15,7 @@ public class InventoryUI : MonoBehaviour
     public GameObject itemSlotPrefab;
     public Transform inventoryItemTransform;
     private List<ItemSlot> itemSlotList = new List<ItemSlot>();
+    
 
     private void Start()
     {
