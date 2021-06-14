@@ -8,12 +8,14 @@ public class InventoryUI_DispPanel : MonoBehaviour
     public GameObject itemLabelText;
     public GameObject itemIcon;
     public GameObject itemDescriptionText;
+    public GameObject itemAmountText;
 
     public void DispPanelUpdate(ItemSlot itemslot)
     {
         SetItemLabelText(itemslot.Item.name);
         SetItemIcon(itemslot.Item.icon);
         SetItemDescriptionText(itemslot.Item.description);
+        SetItemAmountText(itemslot.itemAmount);
     }
 
 
@@ -32,5 +34,9 @@ public class InventoryUI_DispPanel : MonoBehaviour
         itemDescriptionText.GetComponent<Text>().text = desc;
     }
 
+    private void SetItemAmountText(int amount)
+    {
+        itemAmountText.GetComponent<Text>().text = "x" + amount.ToString();
+    }
 
 }
