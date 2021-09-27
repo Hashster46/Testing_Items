@@ -16,3 +16,5 @@ MonoBehaviour:
   icon: {fileID: 5948929597003177520, guid: 6ca53ee470c0afe4fb1aa3ce1d1be997, type: 3}
   description: Charcoal is the most basic material used as fuel. It is made by roasting
     wood and organic matter in a sealed container.
+  qualias:
+  - {fileID: 11400000, guid: 4d96eec7ef49216479d6caac30c23682, type: 2}
